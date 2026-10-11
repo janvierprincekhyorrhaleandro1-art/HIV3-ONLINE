@@ -69,7 +69,7 @@ window.addEventListener('popstate', (event) => {
             false
         );
     } else {
-        navigateTo('page-welcome', null, false);
+        navigateTo('page-auth', null, false);
     }
 });
 
@@ -1136,20 +1136,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     warmupBackend(); // Reveye sèvè Render an rapid nan background
 
     const loader = document.getElementById('app-loader');
-    if (loader) loader.classList.remove('show');
-
-    const welcomeHero = document.getElementById('welcomeHero');
-    if (welcomeHero) {
-        const w = getWelcome();
-        if (w.bgImage) welcomeHero.style.backgroundImage = `url('${w.bgImage}')`;
-        if (document.getElementById('welcomeBadgeName')) document.getElementById('welcomeBadgeName').innerText = w.badgeName;
-        if (document.getElementById('welcomeBadgeSub')) document.getElementById('welcomeBadgeSub').innerText = w.badgeSub;
-        if (document.getElementById('welcomeBrandName')) document.getElementById('welcomeBrandName').innerText = w.brandName;
-        if (document.getElementById('welcomeBrandSub')) document.getElementById('welcomeBrandSub').innerText = w.brandSub;
-        if (document.getElementById('welcomeHeading')) document.getElementById('welcomeHeading').innerText = w.heading;
-        if (document.getElementById('welcomeText1')) document.getElementById('welcomeText1').innerText = w.text1;
-        if (document.getElementById('welcomeText2')) document.getElementById('welcomeText2').innerText = w.text2;
-    }
+    window.setTimeout(() => {
+        if (loader) loader.classList.remove('show');
+        navigateTo('page-auth', null, false);
+    }, 2000);
 
     const bannerForm = document.getElementById('newCollectionForm');
     if (bannerForm) {
