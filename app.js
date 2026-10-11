@@ -1139,7 +1139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.setTimeout(() => {
         if (loader) loader.classList.remove('show');
         navigateTo('page-auth', null, false);
-    }, 2000);
+    }, 2600);
 
     const bannerForm = document.getElementById('newCollectionForm');
     if (bannerForm) {
