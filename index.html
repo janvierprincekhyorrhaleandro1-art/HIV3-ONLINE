@@ -14,46 +14,16 @@
 <body>
 
     <!-- LOADER OVERLAY -->
-    <div id="app-loader" class="loader-overlay">
-        <div class="spinner"></div>
+    <div id="app-loader" class="loader-overlay show" aria-label="HIV5 ap chaje">
+        <div class="hiv5-pulse-logo" aria-hidden="true">H</div>
     </div>
 
-    <!-- 1. PAJ WELCOME / INDEX -->
-    <section id="page-welcome" class="page-view active">
-        <div class="app-screen welcome-screen">
-            <div class="welcome-hero" id="welcomeHero">
-                <div class="welcome-logo-badge">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <span class="badge-name" id="welcomeBadgeName"></span>
-                    <span class="badge-sub" id="welcomeBadgeSub">DREAM HOUSE</span>
-                </div>
-                <h1 class="welcome-brand-title" id="welcomeBrandName"> HIV5 </h1>
-                <p class="welcome-brand-subtitle" id="welcomeBrandSub">Dream House</p>
-            </div>
-
-            <div class="welcome-sheet">
-                <div>
-                    <h2 class="welcome-heading" id="welcomeHeading">WELCOME</h2>
-                    <p class="welcome-text" id="welcomeText1">Find your next space, feel at home</p>
-                    <p class="welcome-text" id="welcomeText2">Where comfort meets convenience</p>
-                </div>
-
-                <div class="welcome-actions">
-                    <button type="button" class="btn-welcome-login" onclick="navigateTo('page-auth')">GET STARTED</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 2. PAJ AUTHENTIFICATION (AUTH) -->
-    <section id="page-auth" class="page-view">
+    <section id="page-auth" class="page-view active">
         <div class="app-screen">
             <div class="auth-container">
                 <div class="auth-header">
-                    <button type="button" class="btn-back" onclick="navigateTo('page-welcome')">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <div style="width: 44px;"></div>
+                    <div style="width: 44px;"></div><div style="width: 44px;"></div>
                 </div>
 
                 <div class="auth-brand">
