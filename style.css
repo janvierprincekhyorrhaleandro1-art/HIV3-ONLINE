@@ -1426,7 +1426,7 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* OVERLAY LOADER */
+/* SPLASH SCREEN HIV3 — menm dimansyon ak egzanp lan */
 .loader-overlay {
     position: fixed;
     inset: 0;
@@ -1434,29 +1434,66 @@ body {
     height: 100%;
     background: #FFFFFF;
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 99999;
 }
-.loader-overlay.show { display: flex; }
+.loader-overlay.show {
+    display: flex;
+    animation: fadeOutSplash 0.8s ease-out 1.8s forwards;
+}
+.splash-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .hiv5-pulse-logo {
-    color: #000000;
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: #000000;
+    border: 2px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 76px;
+    font-size: 30px;
     line-height: 1;
     font-weight: 900;
-    letter-spacing: -5px;
-    animation: hiv5LogoPulse 0.65s ease-in-out infinite;
+    animation: crownPulse 1.4s ease-out infinite alternate;
     transform-origin: center;
 }
-@keyframes hiv5LogoPulse {
-    0%, 100% { transform: scale(1); opacity: 0.78; }
-    50% { transform: scale(1.22); opacity: 1; }
+.splash-wordmark {
+    margin-top: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #000000;
+    opacity: 0;
+    animation: fadeInContent 1s ease-out 2.2s forwards;
+}
+@keyframes crownPulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 15px rgba(0, 0, 0, 0.08); }
+    100% { transform: scale(1.15); box-shadow: 0 0 35px rgba(0, 0, 0, 0.18); }
+}
+@keyframes fadeOutSplash {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+@keyframes fadeInContent {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
     .hiv5-pulse-logo { animation: none; }
+    .splash-wordmark { animation: none; opacity: 1; }
+    .loader-overlay.show { animation-duration: 0.01ms; animation-delay: 0s; }
 }
-
 @keyframes spinAnim {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
